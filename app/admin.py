@@ -4,9 +4,6 @@ from django.contrib.auth.admin import UserAdmin as DefaultUserAdmin
 
 from .models import UsuarioPerfil, Estabelecimento, CategoriaProduto, Produto
 
-admin.site.register(CategoriaProduto)
-admin.site.register(Produto)
-
 class UsuarioPerfilInline(admin.StackedInline):
     model = UsuarioPerfil
     can_delete = False
