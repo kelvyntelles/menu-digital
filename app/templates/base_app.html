@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menu digital - {{ estabelecimento.nome }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+      a {
+        text-decoration: none;
+      }
+      
+      .efeito_header {
+        margin-top: -16px;
+        height: 20px;
+        background-color: #FFF;
+        border-radius: 15px 15px 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Mostra o menu apenas em dispositivos móveis -->
+    <div class="d-block d-md-none">
+      <header class="bg-primary pt-2 pb-4">
+        <div class="container text-center text-white">
+          Menu digital - {{ estabelecimento.nome }}
+        </div>
+      </header>
+      <div class="efeito_header"></div>
+      <div class="container mb-3">
+        {% block content %}
+        {% endblock content %}
+      </div>
+    </div>
+
+    <!-- Mostra mensagem em telas maiores -->
+    <div class="d-none d-md-flex justify-content-center align-items-center vh-100">
+      <h4 class="text-center text-muted">
+        Este menu digital foi feito para ser usado em dispositivos móveis 📱<br>
+        Por favor, abra em um celular.
+      </h4>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>

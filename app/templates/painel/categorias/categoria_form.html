@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %} Mesa digital | Nova categoria {% endblock title %}
+
+{% block content %}
+    <div class="box box-primary">
+        <div class="box-header with-border mb-3">
+            <h3 class="box-title">{{ titulo }}</h3>
+        </div>
+
+        <form method="post" class="form">
+            {% csrf_token %}
+
+            {% bootstrap_form form %}
+
+            <input type="submit" class="btn btn-primary" value="Salvar">
+            <a href="{% url 'categorias' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+{% endblock content %}

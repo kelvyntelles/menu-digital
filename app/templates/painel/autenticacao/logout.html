@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block title %}Mesa digital | Logout{% endblock title %}
+
+{% block content %}
+<div class="box box-primary p-4 rounded shadow">
+    <div class="box-header with-border mb-3">
+        <h3 class="box-title">Usuário: {{ request.user.username }}</h3>
+    </div>
+
+    <p>Tem certeza que deseja sair do sistema?</p>
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar Logout</button>
+        <a href="{% url 'dashboard' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

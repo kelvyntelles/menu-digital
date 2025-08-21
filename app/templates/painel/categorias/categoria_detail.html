@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Mesa digital | Categorias {% endblock title %}
+
+{% block content %}
+    <div class="box box-primary">
+        <div class="box-header with-border mb-3">
+            <h3 class="box-title">{{ categoria.nome }}</h3>
+        </div>
+
+        <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Detalhes da categoria</h3>
+
+          <div class="card-tools">
+            <a href="{% url 'categorias' %}" class="btn btn-primary btn-sm">
+                <i class="fa fa-solid fa-arrow-left"></i>
+                voltar
+            </a>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 order-2 order-md-1">
+              <div class="row">
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">Total de produtos associados</span>
+                      <span class="info-box-number text-center text-muted mb-0">2300</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.card-body -->
+      </div>
+    </div>
+{% endblock content %}

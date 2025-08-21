@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Mesa digital | Categorias {% endblock title %}
+
+{% block content %}
+    <div class="box box-primary">
+        <div class="box-header with-border mb-3">
+            <h3 class="box-title">Categorias</h3>
+        </div>
+
+        {% if categorias %}
+        <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">{{ total_categorias }} Categorias</h3>
+
+          <div class="card-tools">
+            <a href="{% url 'categoria_create' %}" class="btn btn-primary btn-sm">
+                <i class="fas fa-solid fa-plus"></i>
+                Nova categoria
+            </a>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width: 1%">
+                        #
+                      </th>
+                      <th style="width: 20%">
+                        Nome da categoria
+                      </th>
+                      <th style="width: 20%">
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                {% for categoria in categorias %}
+                <tr>
+                    <td>
+                        {{ categoria.id }}
+                    </td>
+                    <td>
+                        <a>
+                            {{ categoria.nome }}
+                        </a>
+                    </td>
+                    <td class="project-actions text-right">
+                        <a class="btn btn-primary btn-sm" href="{% url 'categoria' categoria.pk %}">
+                            <i class="fas fa-folder">
+                            </i>
+                            Visualizar
+                        </a>
+                        <a class="btn btn-info btn-sm" href="{% url 'categoria_update' categoria.pk %}">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            Editar
+                        </a>
+                        <a class="btn btn-danger btn-sm" href="{% url 'categoria_delete' categoria.pk %}">
+                            <i class="fas fa-trash">
+                            </i>
+                            Deletar
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      {% else %}
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+            <h3 class="card-title">
+                <i class="fas fa-edit"></i>
+                {{ total_categorias }} Categorias
+            </h3>
+            </div>
+            <div class="card-body">
+                <a href="{% url 'categoria_create' %}" class="btn btn-primary btn-sm">
+                <i class="fas fa-solid fa-plus"></i>
+                    Nova categoria
+                </a>
+                <div class="text-muted mt-3">
+                    Nenhuma categoria cadastrada até o momento.
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+      {% endif %}
+    </div>
+{% endblock content %}

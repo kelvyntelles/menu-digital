@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Mesa digital | Dashboard {% endblock title %}
+
+{% block content %}
+    <div class="box box-primary">
+        <div class="box-header with-border mb-3">
+            <h3 class="box-title">Dashboard</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-info">
+                    <div class="inner">
+                    <h3>{{ total_produtos }}</h3>
+
+                    <p>Produtos</p>
+                    </div>
+                    <a href="{% url 'produtos' %}" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                    <h3>{{ total_categorias_produtos }}</h3>
+                    <p>Categorias</p>
+                    </div>
+                    <a href="{% url 'categorias' %}" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-success">
+                    <div class="inner">
+                    <h3>{{ total_produtos_destaques }}</h3>
+
+                    <p>Produtos destaques</p>
+                    </div>
+                    <a href="{% url 'produtos_destaque' %}" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                    <h3>{{ total_produtos_promocao }}</h3>
+
+                    <p>Produtos em promoção</p>
+                    </div>
+                    <a href="{% url 'produtos_promocao' %}" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        </div>
+    </div>
+{% endblock content %}
