@@ -3,21 +3,17 @@
 
 {% block content %}
 <!-- LOGO DO ESTABELECIMENTO -->
-<div class="mb-3">
-    <div class="row">
-        <div class="col-3">
-            {% if estabelecimento.logo %}
-                <img src="{{ estabelecimento.logo.url }}" class="img-fluid rounded" alt="Foto do estabelecimento" style="width: 100%; height: 100%; object-fit: cover;">
-            {% else %}
-                <img src="{% static 'images/sem-foto.jpg' %}" class="card-img-top rounded" alt="Foto do produto" style="width: 100%; height: 75px; object-fit: cover;">
-            {% endif %}
-        </div>
-        <div class="col-9 d-flex align-items-center">
-            <span class="fs-4 fw-bold">
-                {{ estabelecimento.nome }}
-            </span>
-        </div>
+<div class="mb-3 d-flex gap-2 align-items-center justify-content-center">
+    <div>
+        {% if estabelecimento.logo %}
+            <img src="{{ estabelecimento.logo.url }}" class="img-fluid rounded-circle" alt="Foto do estabelecimento" style="width: 60px; height: 60px; object-fit: cover;">
+        {% else %}
+            <img src="{% static 'images/sem-foto.jpg' %}" class="card-img-top rounded" alt="Foto do produto" style="width: 60px; height: 60px; object-fit: cover;">
+        {% endif %}
     </div>
+    <span class="fs-4 fw-bold">
+        {{ estabelecimento.nome }}
+    </span>
 </div>
 <!-- FIM - LOGO DO ESTABELECIMENTO -->
 
